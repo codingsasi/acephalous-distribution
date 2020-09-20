@@ -49,6 +49,10 @@ install:
   - admin_toolbar
   - pathauto
   - acephalous_extras
+  - basic_auth
+  - decoupled_router
+  - menu_item_extras
+  - update
 themes:
   - bartik
   - seven

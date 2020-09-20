@@ -1,4 +1,4 @@
-uuid: 2401cada-022c-4aa5-bf7d-c90abc21f827
+uuid: f9120c29-b251-43e2-a5fd-a05e54d47b7d
 langcode: en
 status: true
 dependencies: {  }
@@ -12,6 +12,7 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
+  - 'access user profiles'
   - 'restful get rest_menu_item'
   - 'search content'
   - 'use text format restricted_html'

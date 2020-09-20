@@ -1,11 +1,11 @@
-uuid: 32527871-5508-4c9d-b513-73bcd69cb017
+uuid: 25580496-f2d3-4afe-82f8-2f4c520b1b10
 name: Acephalous
 mail: abhaisasidharan@gmail.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /user/login
+  front: /node
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en

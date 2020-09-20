@@ -117,9 +117,13 @@
         "phpmd/phpmd": "^2.7",
         "squizlabs/php_codesniffer": "^3.4",
         "drupal/default_content": "^1.0@alpha",
-        "drupal/admin_toolbar": "^1.27",
+        "drupal/admin_toolbar": "^2.3",
         "drupal/pathauto": "^1.4",
-        "acquia/blt": "^11.2"
+        "acquia/blt": "^11.2",
+        "drupal/menu_item_extras": "^2.11",
+        "drupal/routes_list": "5.x-dev",
+        "drupal/entity": "^1.1",
+        "drupal/decoupled_router": "^1.12"
     },
     "require-dev": {
         "drupal/coder": "^8.2",
@@ -166,7 +170,8 @@
             "drupal/core": "-p2"
         },
         "patches": {
-            "drupal/core": {
+            "drupal/rest_menu_items": {
+               "Support for menu_items_extra module": "https://www.drupal.org/files/issues/2019-06-22/3039979-support-menu-items-extra-4_0.patch"
             }
         }
     },
