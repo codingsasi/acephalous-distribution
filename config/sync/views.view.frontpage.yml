@@ -1,4 +1,4 @@
-uuid: f202a138-1d07-4459-8151-5e0788814fc1
+uuid: a41f679e-1481-4d04-87ea-081b4cca7e32
 langcode: en
 status: true
 dependencies:
@@ -7,6 +7,8 @@ dependencies:
     - core.entity_view_mode.node.teaser
   module:
     - node
+    - rest
+    - serialization
     - user
 _core:
   default_config_hash: Xk6puCoRlHSJG8mU9Zg2iN4fbnzaw2dFolwMfpWxDSE
@@ -288,6 +290,24 @@ display:
     cache_metadata:
       contexts:
         - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      max-age: -1
+      tags: {  }
+  node_json:
+    display_plugin: rest_export
+    id: node_json
+    display_title: 'REST export'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: node
+      auth:
+        - cookie
+    cache_metadata:
+      contexts:
+        - 'languages:language_interface'
+        - request_format
         - 'user.node_grants:view'
         - user.permissions
       max-age: -1

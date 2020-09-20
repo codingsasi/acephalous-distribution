@@ -3,8 +3,8 @@
 namespace Drupal\acephalous_extras\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Entity\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
@@ -15,16 +15,15 @@ class SiteInfoAPIController extends ControllerBase {
   /**
    * Drupal\Core\Entity\EntityManagerInterface definition.
    *
-   * @var \Drupal\Core\Entity\EntityManagerInterface
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
-  protected $entityManager;
-
+  protected $entityTypeManager;
 
   /**
    * Constructs a new SiteInfoAPIController object.
    */
-  public function __construct(EntityManagerInterface $entity_manager) {
-    $this->entityManager = $entity_manager;
+  public function __construct(EntityTypeManagerInterface $entity_type_manager) {
+    $this->entityTypeManager = $entity_type_manager;
   }
 
   /**
@@ -32,7 +31,7 @@ class SiteInfoAPIController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('entity.manager')
+      $container->get('entity_type.manager')
     );
   }
 

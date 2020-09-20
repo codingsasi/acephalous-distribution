@@ -13,3 +13,5 @@ output_values:
   enabled: enabled
   uuid: uuid
   options: options
+base_url: ''
+add_fragment: 1

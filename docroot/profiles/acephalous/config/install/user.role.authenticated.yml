@@ -10,6 +10,7 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'access user profiles'
   - 'post comments'
   - 'restful get rest_menu_item'
   - 'search content'

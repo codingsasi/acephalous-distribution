@@ -1,4 +1,4 @@
-uuid: 2748f560-aeca-4f51-8859-63f0ab5a2933
+uuid: 7170955c-4938-4907-8a38-3d9722bdfa26
 langcode: en
 status: true
 dependencies: {  }
@@ -13,6 +13,7 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'access user profiles'
   - 'post comments'
   - 'restful get rest_menu_item'
   - 'search content'

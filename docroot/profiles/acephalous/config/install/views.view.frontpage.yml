@@ -6,6 +6,8 @@ dependencies:
     - core.entity_view_mode.node.teaser
   module:
     - node
+    - rest
+    - serialization
     - user
 id: frontpage
 label: Frontpage
@@ -285,6 +287,24 @@ display:
     cache_metadata:
       contexts:
         - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      max-age: -1
+      tags: {  }
+  node_json:
+    display_plugin: rest_export
+    id: node_json
+    display_title: 'REST export'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: node
+      auth:
+        - cookie
+    cache_metadata:
+      contexts:
+        - 'languages:language_interface'
+        - request_format
         - 'user.node_grants:view'
         - user.permissions
       max-age: -1
