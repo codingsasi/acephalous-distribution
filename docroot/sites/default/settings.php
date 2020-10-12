@@ -774,13 +774,6 @@ $settings['entity_update_backup'] = TRUE;
  * Keep this code block at the end of this file to take full effect.
  */
 
- if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-   include $app_root . '/' . $site_path . '/settings.local.php';
- }
-
- if (file_exists($app_root . '/' . $site_path . '/settings.dev.php')) {
-  include $app_root . '/' . $site_path . '/settings.dev.php';
-}
 $databases['default']['default'] = array (
   'database' => 'drupal8',
   'username' => 'drupal8',
@@ -791,3 +784,11 @@ $databases['default']['default'] = array (
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 );
+
+ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+   include $app_root . '/' . $site_path . '/settings.local.php';
+ }
+
+ if (file_exists($app_root . '/' . $site_path . '/settings.dev.php')) {
+  include $app_root . '/' . $site_path . '/settings.dev.php';
+}

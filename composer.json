@@ -108,7 +108,7 @@
         "cweagans/composer-patches": "^1.6",
         "drupal/core": "^8.7",
         "drush/drush": "^9.0",
-        "drupal/console": "~1.0",
+        "drupal/console": "^1.9",
         "drupal/jsonapi_extras": "^3.12",
         "drupal/rest_menu_items": "^2.9",
         "drupal/restui": "^1.17",
@@ -123,7 +123,8 @@
         "drupal/menu_item_extras": "^2.11",
         "drupal/routes_list": "5.x-dev",
         "drupal/entity": "^1.1",
-        "drupal/decoupled_router": "^1.12"
+        "drupal/decoupled_router": "^1.12",
+        "geerlingguy/drupal-vm": "^6.0"
     },
     "require-dev": {
         "drupal/coder": "^8.2",
