@@ -1,7 +1,7 @@
 name: Acephalous
 type: profile
 description: 'API First distribution for De-coupling Drupal'
-core: 8.x
+core_version_requirement: ^8.8 || ^9
 distribution:
   name: 'Acephalous'
 install:
