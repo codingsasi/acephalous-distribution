@@ -124,9 +124,9 @@
     },
     "require-dev": {
         "drupal/coder": "^8.2",
-        "webflo/drupal-core-require-dev": "^8.7",
         "jakub-onderka/php-parallel-lint": "^0.9.2",
-        "jakub-onderka/php-console-highlighter": "^0.3.2"
+        "jakub-onderka/php-console-highlighter": "^0.3.2",
+        "drupal/core-dev": "^8.7"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -141,10 +141,8 @@
     "scripts": {
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "pre-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
         "pre-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
         "post-install-cmd": [
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
