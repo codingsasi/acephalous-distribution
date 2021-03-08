@@ -2,13 +2,13 @@ name: drupal
 recipe: drupal8
 config:
   webroot: docroot
-  php: '7.3'
+  php: '7.4'
   via: nginx
-  drush: 9.6.0-rc3
+  drush: '^10'
   xdebug: true
 services:
   database:
-    type: mariadb:10.1
+    type: 'mariadb:10.4'
   mailhog:
     type: mailhog
     hogfrom:
