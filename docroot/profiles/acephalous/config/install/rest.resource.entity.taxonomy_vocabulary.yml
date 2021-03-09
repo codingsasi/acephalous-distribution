@@ -1,4 +1,3 @@
-uuid: 2e69a381-3f64-484e-a782-71d1603f3bdf
 langcode: en
 status: true
 dependencies:
@@ -6,13 +5,12 @@ dependencies:
     - basic_auth
     - serialization
     - taxonomy
-id: entity.taxonomy_term
-plugin_id: 'entity:taxonomy_term'
+id: entity.taxonomy_vocabulary
+plugin_id: 'entity:taxonomy_vocabulary'
 granularity: resource
 configuration:
   methods:
     - GET
-    - POST
   formats:
     - json
   authentication:
