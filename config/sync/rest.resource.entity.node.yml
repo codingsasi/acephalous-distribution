@@ -1,4 +1,4 @@
-uuid: a0524417-4dc8-457e-92f9-30bd0f4b2087
+uuid: 53912390-3437-4171-ad7a-522e86b59308
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
     - node
     - serialization
 _core:
-  default_config_hash: t_jfECmZhJqBOJuSOFn87EOi_TWi-_fRYTuJgd19vgg
+  default_config_hash: icOulimXgcFtG4Allx_mJf9iKlLv3Ofc6zyKL71v6mQ
 id: entity.node
 plugin_id: 'entity:node'
 granularity: resource

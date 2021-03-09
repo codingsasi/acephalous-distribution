@@ -13,7 +13,7 @@ output_values:
   enabled: enabled
   uuid: uuid
   options: options
-_core:
-  default_config_hash: Jf4526WHuU7GV95r5Zf107vA07RskjHFmq-9QWKnpbc
 base_url: ''
 add_fragment: 1
+_core:
+  default_config_hash: QMp6AUrMMwmEQSlX3OLrYRe7t3Lx4J0pKmDoYefSCWY

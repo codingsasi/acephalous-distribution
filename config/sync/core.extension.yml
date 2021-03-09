@@ -32,9 +32,9 @@ module:
   image: 0
   jsonapi: 0
   jsonapi_extras: 0
-  kint: 0
   link: 0
   menu_item_extras: 0
+  menu_link_content: 0
   menu_ui: 0
   node: 0
   options: 0
@@ -58,7 +58,6 @@ module:
   update: 0
   user: 0
   views_ui: 0
-  menu_link_content: 1
   pathauto: 1
   views: 10
   acephalous: 1000
