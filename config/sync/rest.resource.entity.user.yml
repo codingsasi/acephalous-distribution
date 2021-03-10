@@ -1,4 +1,4 @@
-uuid: 3e3e5369-2c6b-4e20-b5a1-84310f185fe5
+uuid: 79e56d2d-6f81-4dff-803c-6fd3e8953a2b
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - basic_auth
     - serialization
     - user
+_core:
+  default_config_hash: 7l1NBsFqG818aOmd_bqTDa_oWi3EpV75Vf4wpkoxppo
 id: entity.user
 plugin_id: 'entity:user'
 granularity: resource

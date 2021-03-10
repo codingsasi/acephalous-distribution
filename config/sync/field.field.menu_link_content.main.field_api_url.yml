@@ -1,10 +1,12 @@
-uuid: 61307c10-ac59-4ece-a49d-66848ba68947
+uuid: 8432d77f-4776-4a5a-b947-9f1e2e19c6b4
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.menu_link_content.field_api_url
     - system.menu.main
+_core:
+  default_config_hash: StpuSPQenvqDISRgk_e5BMysGcx0FhmC3i9tq1Md-_U
 id: menu_link_content.main.field_api_url
 field_name: field_api_url
 entity_type: menu_link_content

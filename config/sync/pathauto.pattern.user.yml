@@ -1,9 +1,11 @@
-uuid: 44abe493-f9c4-4352-9aff-4acc9dbc7d23
+uuid: c0b6d9c9-0ca1-47c8-8d37-2054a148fd0f
 langcode: en
 status: true
 dependencies:
   module:
     - user
+_core:
+  default_config_hash: K0Fh40CjKOsLB3F-pYjY3EzEobnW1Rk8NTgxoVsXkRQ
 id: user
 label: User
 type: 'canonical_entities:user'

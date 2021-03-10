@@ -1,10 +1,12 @@
-uuid: 1e8a5942-873b-4390-bc18-2669e94f1d62
+uuid: bac64c30-648a-4263-973e-2c254d3d4214
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.menu_link_content.main.field_api_url
     - system.menu.main
+_core:
+  default_config_hash: gZIWRu2OIirLhR56txSGvyyD1zV9TlROr911OWj2YGI
 id: menu_link_content.main.default
 targetEntityType: menu_link_content
 bundle: main

@@ -1,4 +1,4 @@
-uuid: ada3bc82-cd0e-4b27-be76-c8bdf2d26206
+uuid: dbf13383-63cd-4065-a5fe-3e62ed330983
 langcode: en
 status: true
 dependencies:
@@ -8,6 +8,8 @@ dependencies:
   module:
     - link
     - menu_item_extras
+_core:
+  default_config_hash: ZdUZoCOXW4NybSPn31L7UKxE9PhNrW3K0txPd9V2Jms
 id: menu_link_content.main.default
 targetEntityType: menu_link_content
 bundle: main

@@ -775,7 +775,7 @@ $settings['entity_update_backup'] = TRUE;
  */
 
 //$databases['default']['default'] = array (
-//  'database' => 'drupal8',
+//  'database' => 'drupal9',
 //  'username' => 'drupal8',
 //  'password' => 'drupal8',
 //  'prefix' => '',
