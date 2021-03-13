@@ -1,4 +1,4 @@
-uuid: 14b5e90c-a4d8-4884-83a1-a253ffbd08a1
+uuid: d55fadb6-7481-4ec8-9fa4-ef0395f958df
 langcode: en
 status: true
 dependencies:
@@ -62,10 +62,10 @@ settings:
             - Undo
             - Redo
   plugins:
-    stylescombo:
-      styles: ''
     language:
       language_list: un
+    stylescombo:
+      styles: ''
 image_upload:
   status: true
   scheme: public

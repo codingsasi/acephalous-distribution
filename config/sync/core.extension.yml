@@ -33,6 +33,7 @@ module:
   jsonapi: 0
   jsonapi_extras: 0
   link: 0
+  media: 0
   menu_item_extras: 0
   menu_link_content: 0
   menu_ui: 0

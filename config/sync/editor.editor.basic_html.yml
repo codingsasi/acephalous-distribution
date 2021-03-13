@@ -1,4 +1,4 @@
-uuid: 6ab81366-fa95-41ee-a591-f93e0fd952d9
+uuid: 40d16c91-3779-4c7b-a404-4002a447765d
 langcode: en
 status: true
 dependencies:
@@ -43,10 +43,10 @@ settings:
           items:
             - Source
   plugins:
-    stylescombo:
-      styles: ''
     language:
       language_list: un
+    stylescombo:
+      styles: ''
 image_upload:
   status: true
   scheme: public
