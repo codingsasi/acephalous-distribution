@@ -1,4 +1,4 @@
-uuid: 483973d1-8810-4df5-970f-daa53b58677c
+uuid: 3bfa0e12-4957-4c2f-9649-561c58e9dc21
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - basic_auth
     - serialization
     - taxonomy
+_core:
+  default_config_hash: 8T0GBLnGzS7r5w30TK6Iqmd8CcnGABnqpBIASQyUlIA
 id: entity.taxonomy_term
 plugin_id: 'entity:taxonomy_term'
 granularity: resource

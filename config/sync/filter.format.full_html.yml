@@ -1,11 +1,9 @@
-uuid: 317dca80-dc48-40b4-96da-0cfe55b3161f
+uuid: 16d54b82-44e6-4619-b3d6-558b9d6304a3
 langcode: en
 status: true
 dependencies:
   module:
-    - acephalous_extras
     - editor
-    - media
 _core:
   default_config_hash: u2PpkGGAYAwrGeYPgjoAVTikfdx90CcP_fTsqBVfISE
 name: 'Full HTML'
@@ -45,18 +43,3 @@ filters:
       allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <h1> <pre> <u>'
       filter_html_help: true
       filter_html_nofollow: false
-  image_url_filter:
-    id: image_url_filter
-    provider: acephalous_extras
-    status: true
-    weight: 999
-    settings: {  }
-  media_embed:
-    id: media_embed
-    provider: media
-    status: false
-    weight: 100
-    settings:
-      default_view_mode: default
-      allowed_media_types: {  }
-      allowed_view_modes: {  }

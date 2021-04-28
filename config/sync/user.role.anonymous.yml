@@ -1,4 +1,4 @@
-uuid: 38fba42b-6e3d-4269-adce-6161cff17033
+uuid: df000298-f0ff-492e-81ad-a03ea3113efc
 langcode: en
 status: true
 dependencies: {  }
@@ -16,4 +16,3 @@ permissions:
   - 'restful get rest_menu_item'
   - 'search content'
   - 'use text format restricted_html'
-  - 'view media'

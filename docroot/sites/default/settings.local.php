@@ -156,7 +156,7 @@ $settings['skip_permissions_hardening'] = TRUE;
 $settings['config_sync_directory'] = '../config/sync';
 
 $databases['default']['default'] = array (
-    'database' => 'drupal9',
+    'database' => 'drupal8',
     'username' => 'drupal8',
     'password' => 'drupal8',
     'prefix' => '',

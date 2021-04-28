@@ -1,4 +1,4 @@
-name: drupal
+name: acephalous
 recipe: drupal8
 config:
   webroot: docroot
@@ -15,7 +15,7 @@ services:
       - appserver
 proxy:
   mailhog:
-    - mail.drupal.lndo.site
+    - mail.acephalous.lndo.site
 tooling:
   robo:
     service: appserver
