@@ -3,9 +3,11 @@ status: true
 dependencies:
   config:
     - field.field.node.page_layout.body
+    - field.field.node.page_layout.layout_builder__layout
     - node.type.page_layout
   module:
     - layout_builder
+    - layout_discovery
     - text
     - user
 third_party_settings:
@@ -18,7 +20,7 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          ed45ceea-147a-4f71-9fc3-c33d13bb0960:
+          -
             uuid: ed45ceea-147a-4f71-9fc3-c33d13bb0960
             region: content
             configuration:
@@ -28,7 +30,7 @@ third_party_settings:
               id: 'extra_field_block:node:page_layout:links'
             additional: {  }
             weight: 0
-          ef504617-0d97-47d8-bd08-d713708063f6:
+          -
             uuid: ef504617-0d97-47d8-bd08-d713708063f6
             region: content
             configuration:
@@ -61,4 +63,5 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  layout_builder__layout: true

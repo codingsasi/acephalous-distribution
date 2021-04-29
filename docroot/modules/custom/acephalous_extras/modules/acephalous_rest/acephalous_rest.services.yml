@@ -1,0 +1,6 @@
+services:
+  acephalous_reset.content_normalizer:
+    class: Drupal\acephalous_rest\Normalizer\AcephalousNormalizer
+    arguments: [ '@entity_type.manager', '@entity_type.repository', '@entity_field.manager' ]
+    tags:
+      - { name: normalizer, priority: 9 }

@@ -53,6 +53,8 @@ install:
   - decoupled_router
   - menu_item_extras
   - update
+  - layout_builder
+  - layout_discovery
 themes:
   - bartik
   - seven

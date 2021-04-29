@@ -153,7 +153,7 @@ $settings['skip_permissions_hardening'] = TRUE;
  * the language or field module.
  */
 # $settings['config_exclude_modules'] = ['devel', 'stage_file_proxy'];
-$settings['config_sync_directory'] = '../config/sync';
+$settings['config_sync_directory'] = 'sites/default/files/config/sync';
 
 $databases['default']['default'] = array (
     'database' => 'drupal8',

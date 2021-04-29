@@ -1,0 +1,13 @@
+{
+    "name": "acephalous_rest",
+    "type": "drupal-module",
+    "description": "Rest optmizations for Acephalous",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/acephalous_rest",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/acephalous_rest",
+        "source": "http://cgit.drupalcode.org/acephalous_rest"
+    }
+}

@@ -22,3 +22,11 @@ function acephalous_extras_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
+
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function acephalous_extras_entity_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
+//  kint($entity->toArray());
+}

@@ -1,0 +1,5 @@
+name: 'Acephalous Rest'
+type: module
+description: 'Rest optmizations for Acephalous'
+core_version_requirement: ^8.8 || ^9
+package: 'Acephalous'
