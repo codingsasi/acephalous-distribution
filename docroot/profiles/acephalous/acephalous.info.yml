@@ -49,6 +49,7 @@ install:
   - admin_toolbar
   - pathauto
   - acephalous_extras
+  - acephalous_rest
   - basic_auth
   - decoupled_router
   - menu_item_extras
