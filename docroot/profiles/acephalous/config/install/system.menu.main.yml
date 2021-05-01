@@ -5,7 +5,7 @@ dependencies:
     - decoupled_menus
 third_party_settings:
   decoupled_menus:
-    linkset_array_type: 0
+    linkset_array_type: 1
 id: main
 label: 'Main navigation'
 description: 'Site section links'
