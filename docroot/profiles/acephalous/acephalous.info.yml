@@ -51,6 +51,7 @@ install:
   - acephalous_rest
   - basic_auth
   - decoupled_router
+  - decoupled_menus
   - update
   - layout_builder
   - layout_discovery
