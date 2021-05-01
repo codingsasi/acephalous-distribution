@@ -122,7 +122,8 @@
         "drupal/decoupled_router": "^2",
         "geerlingguy/drupal-vm": "^6.0",
         "drupal/core-dev": "^9",
-        "kint-php/kint": "^3.3"
+        "kint-php/kint": "^3.3",
+        "drupal/decoupled_menus": "^1.0@beta"
     },
     "require-dev": {
         "drupal/coder": "^8.2",
@@ -176,6 +177,9 @@
             },
             "drupal/devel": {
                 "Brings back the Available Methods & Properties tabs for Kint dumps — Issue #221": "https://raw.githubusercontent.com/politsin/snipets/master/patch/kint.patch"
+            },
+            "drupal/decoupled_menus": {
+                "Linkset Array structure": "https://www.drupal.org/files/issues/2021-05-02/linkset-array-structure-3211707-2.patch"
             }
         }
     },

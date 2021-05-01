@@ -1,0 +1,159 @@
+diff --git a/config/decoupled_menus.schema.yml b/config/decoupled_menus.schema.yml
+new file mode 100644
+index 0000000..ab15af2
+--- /dev/null
++++ b/config/decoupled_menus.schema.yml
+@@ -0,0 +1,7 @@
++system.menu.*.third_party.decoupled_menus:
++  type: mapping
++  label: 'Decoupled menus settings'
++  mapping:
++    linkset_array_type:
++      type: boolean
++      label: 'Linkset array type''
+diff --git a/decoupled_menus.module b/decoupled_menus.module
+new file mode 100644
+index 0000000..b2f6cbe
+--- /dev/null
++++ b/decoupled_menus.module
+@@ -0,0 +1,11 @@
++<?php
++
++/**
++ * Implements hook_entity_type_alter().
++ */
++function decoupled_menus_entity_type_alter(array &$entity_types) {
++  if (isset($entity_types['menu'])) {
++    $entity_types['menu']->setFormClass('edit', 'Drupal\decoupled_menus\MenuForm');
++    $entity_types['menu']->setFormClass('add', 'Drupal\decoupled_menus\MenuForm');
++  }
++}
+diff --git a/src/Controller/Linkset.php b/src/Controller/Linkset.php
+index ee400e7..bba2306 100644
+--- a/src/Controller/Linkset.php
++++ b/src/Controller/Linkset.php
+@@ -4,7 +4,6 @@ declare(strict_types=1);
+ 
+ namespace Drupal\decoupled_menus\Controller;
+ 
+-use Drupal\Component\Assertion\Inspector;
+ use Drupal\Core\Access\AccessResultInterface;
+ use Drupal\Core\Cache\CacheableJsonResponse;
+ use Drupal\Core\Cache\CacheableMetadata;
+@@ -67,7 +66,12 @@ final class Linkset extends ControllerBase {
+     // Encode the menu tree as links in the application/linkset+json media type
+     // and add the machine name of the menu to which they belong.
+     $menu_id = $menu->id();
+-    $links = $this->toLinkTargetObjects($tree, $cacheability);
++    if ((bool) $menu->getThirdPartySetting('decoupled_menus', 'linkset_array_type') === TRUE) {
++      $links = $this->toRegularLinkTargetObjects($tree, $cacheability);
++    }
++    else {
++      $links = $this->toLinkTargetObjects($tree, $cacheability);
++    }
+     foreach ($links as $rel => $target_objects) {
+       $links[$rel] = array_map(function (array $target) use ($menu_id) {
+         // According to the Linkset specification, this member must be an array
+@@ -88,6 +92,60 @@ final class Linkset extends ControllerBase {
+     return $response;
+   }
+ 
++  /**
++   * Doing the same thing as toLinkTargetObjects().
++   *
++   * The method recursively traverses through menu tree and creates
++   * a multi-dimensional representation of the menu tree. The advantage
++   * of this method is that there is no upper limit on the number of menu
++   * items that can be added to the menu as we are not using "heirarchy".
++   *
++   * @param \Drupal\Core\Menu\MenuLinkTreeElement[] $tree
++   *   A tree of menu elements.
++   * @param \Drupal\Core\Cache\RefinableCacheableDependencyInterface $cacheability
++   *   An object to capture any cacheability metadata.
++   * @param string $hierarchy_prefix
++   *   (Internal use only) The hierarchy string value of the the parent element
++   *   if $tree is a subtree. Do not pass this value.
++   *
++   * @return array
++   *   An array which can be JSON-encoded to represent the given link tree.
++   *
++   * @see https://www.drupal.org/project/decoupled_menus/issues/3211707
++   */
++  function toRegularLinkTargetObjects(array $tree, RefinableCacheableDependencyInterface $cacheability): array {
++    $links = [];
++    // Calling array_values() discards any key names so that $index will be
++    // numerical.
++    foreach (array_values($tree) as $index => $element) {
++      // Extract and preserve the access cacheability metadata.
++      $element_access = $element->access;
++      assert($element_access instanceof AccessResultInterface);
++      $cacheability->addCacheableDependency($element_access);
++      // If an element is not accessible, it should not be encoded. Its
++      // cacheability should be preserved regardless, which is why that is done
++      // outside of this conditional.
++      if ($element_access->isAllowed()) {
++        // Get and generate the URL of the link's target. This can create
++        // cacheability metadata also.
++        $url = $element->link->getUrlObject();
++        $generated_url = $url->toString(TRUE);
++        $cacheability = $cacheability->addCacheableDependency($generated_url);
++        $link_options = $element->link->getOptions();
++        $link_attributes = ($link_options['attributes'] ?? []);
++        $link_rel = $link_attributes['rel'] ?? 'item';
++        // Encode the link.
++        $links[$link_rel][] = [
++          'href' => $generated_url->getGeneratedUrl(),
++          // @todo should this use the "title*" key if it is internationalized?
++          'title' => $element->link->getTitle(),
++          'drupal-submenu-linkset' => !empty($element->subtree) ? $this->toRegularLinkTargetObjects($element->subtree, $cacheability) : NULL,
++        ];
++      }
++    }
++    return $links;
++  }
++
+   /**
+    * Encode a menu tree as link items and capture any cacheability metadata.
+    *
+diff --git a/src/MenuForm.php b/src/MenuForm.php
+new file mode 100644
+index 0000000..af010fe
+--- /dev/null
++++ b/src/MenuForm.php
+@@ -0,0 +1,36 @@
++<?php
++
++namespace Drupal\decoupled_menus;
++
++use Drupal\Core\Form\FormStateInterface;
++use Drupal\menu_ui\MenuForm as CoreMenuForm;
++
++/**
++ * Base form for menu edit forms.
++ *
++ * @internal
++ */
++class MenuForm extends CoreMenuForm {
++
++  /**
++   * @inheritdoc
++   */
++  public function form(array $form, FormStateInterface $form_state) {
++    $third_party_settings = $this->entity->getThirdPartySettings('decoupled_menus');
++    $form['third_party_settings']['decoupled_menus']['linkset_array_type'] = [
++      '#type' => 'checkbox',
++      '#title' => $this->t('Linkset array type'),
++      '#description' => $this->t('Check this box to get linkset array with submenus as a nested array.'),
++      '#default_value' => isset($third_party_settings['linkset_array_type']) ? $third_party_settings['linkset_array_type'] : FALSE,
++    ];
++    return parent::form($form, $form_state);
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function submitForm(array &$form, FormStateInterface $form_state) {
++    $this->entity->setThirdPartySetting('decoupled_menus', 'linkset_array_type', $form_state->getValue('linkset_array_type'));
++    parent::submitForm($form, $form_state);
++  }
++}

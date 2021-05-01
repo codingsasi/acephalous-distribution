@@ -8,6 +8,7 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
+  - 'access devel information'
   - 'access site-wide contact form'
   - 'access user profiles'
   - 'restful get rest_menu_item'

@@ -1,6 +1,11 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - decoupled_menus
+third_party_settings:
+  decoupled_menus:
+    linkset_array_type: 0
 id: main
 label: 'Main navigation'
 description: 'Site section links'

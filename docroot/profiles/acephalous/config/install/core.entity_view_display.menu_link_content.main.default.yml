@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.menu_link_content.main.field_api_url
     - system.menu.main
 id: menu_link_content.main.default
 targetEntityType: menu_link_content
@@ -14,5 +13,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  field_api_url: true
+hidden: {  }

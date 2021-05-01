@@ -7,6 +7,11 @@ config:
   drush: '^10'
   xdebug: true
 services:
+  appserver:
+    overrides:
+      environment:
+        # Support debugging Drush with XDEBUG.
+        PHP_IDE_CONFIG: "serverName=appserver"
   database:
     type: 'mariadb:10.4'
   mailhog:
