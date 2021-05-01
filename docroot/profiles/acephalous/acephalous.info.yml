@@ -7,7 +7,6 @@ distribution:
 install:
   - jsonapi
   - jsonapi_extras
-  - rest_menu_items
   - restui
   - devel
   - devel_generate
@@ -52,7 +51,6 @@ install:
   - acephalous_rest
   - basic_auth
   - decoupled_router
-  - menu_item_extras
   - update
   - layout_builder
   - layout_discovery
