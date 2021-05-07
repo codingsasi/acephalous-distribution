@@ -3,7 +3,8 @@ status: true
 dependencies:
   config:
     - field.storage.menu_link_content.field_api_url
-    - system.menu.main
+  module:
+    - menu_link_content
 id: menu_link_content.main.field_api_url
 field_name: field_api_url
 entity_type: menu_link_content

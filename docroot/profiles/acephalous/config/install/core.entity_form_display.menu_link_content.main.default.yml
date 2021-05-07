@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.field.menu_link_content.main.field_api_url
   module:
     - link
     - menu_link_content
@@ -25,4 +27,5 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-hidden: {  }
+hidden:
+  field_api_url: true

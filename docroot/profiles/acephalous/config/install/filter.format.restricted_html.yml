@@ -1,6 +1,8 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - pathologic
 name: 'Restricted HTML'
 format: restricted_html
 weight: 1
@@ -27,3 +29,13 @@ filters:
     weight: 0
     settings:
       filter_url_length: 72
+  filter_pathologic:
+    id: filter_pathologic
+    provider: pathologic
+    status: true
+    weight: 50
+    settings:
+      settings_source: global
+      local_settings:
+        protocol_style: full
+        local_paths: ''

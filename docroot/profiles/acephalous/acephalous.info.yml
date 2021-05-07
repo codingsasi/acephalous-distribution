@@ -29,6 +29,7 @@ install:
   - menu_ui
   - options
   - path
+  - pathologic
   - page_cache
   - dynamic_page_cache
   - big_pipe
